@@ -70,17 +70,6 @@ void *funcionSaxpy(void *arg)
 	}
 	return NULL;
 };
-
-void *unHilo(void *arg)
-{
-	pthread_t hilo1;
-	param_t param1;
-	param1.ini = 0;
-	param1.end = p / 1;
-	pthread_create(&hilo1, NULL, funcionSaxpy, &param1);
-	pthread_join(hilo1, NULL);
-	return NULL;
-};
 int main(int argc, char *argv[])
 {
 	// Getting input values
